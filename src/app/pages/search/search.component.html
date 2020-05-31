@@ -1,0 +1,16 @@
+<div *ngIf="productosService.filtroNotFound" align="center">
+    <h2>Sorry</h2>
+    <p>No se encontraron resultados</p>
+</div>
+
+<div *ngIf="!productosService.cargando" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
+        
+    <a *ngFor="let prod of productosService.productosFiltrado" routerLink="/item/{{prod.cod}}" class="animated fadeIn rk-item ae-masonry__item">
+        <img src="assets/productos/{{prod.url}}.jpg" alt="">
+        <div class="item-meta">
+            <h2>{{ prod.categoria }}</h2>
+            <p>{{ prod.titulo }}</p>
+        </div>
+    </a>
+   
+</div>
