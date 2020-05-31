@@ -81,3 +81,11 @@
     -webkit-animation-name:fadeInDown;
     animation-name:fadeInDown
 }
+
+/*
+  Color del Loading
+*/
+svg path,
+svg rect{
+  fill: black;
+}
