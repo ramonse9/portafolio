@@ -10,9 +10,7 @@ import { ProductosService } from './services/productos.service';
 export class AppComponent {
   
   constructor( public infoPaginaService: InfoPaginaService, 
-              public productosService: ProductosService){
-                console.log("SERVICIO infoPaginaService.service AppComponent");
-                console.log("SERVICIO productos.service AppComponent");
+              public productosService: ProductosService){               
                 }
 
 }

@@ -13,7 +13,6 @@ export class ProductosService {
   filtroNotFound = false;
 
   constructor(private http: HttpClient){
-    console.log("***SERVICIO productos.service");
     this.cargarProductos();
   }
 
@@ -22,18 +21,15 @@ export class ProductosService {
     return new Promise( (resolve, reject) => {
       this.http.get('https://angular-html-95ccd.firebaseio.com/productos_idx.json')
       .subscribe( (resp: Producto[] ) => {
-        console.log( resp );
-        this.productos = resp;
+        // console.log( resp );
+         this.productos = resp;
         
         //setTimeout( () => {
           this.cargando = false;
         //}, 2000);
         resolve();
-
       });
-    });
-
- 
+    }); 
   }
 
   getProductos(id: string){
@@ -60,8 +56,7 @@ export class ProductosService {
   }
 
   private filtrarProductos(termino: string){
-
-    console.log(this.productos);
+    
     this.productosFiltrado = [];
 
     termino = termino.toLocaleLowerCase();    
@@ -82,6 +77,5 @@ export class ProductosService {
       this.filtroNotFound = true;
     }
 
-  }
-  
+  }  
 }
